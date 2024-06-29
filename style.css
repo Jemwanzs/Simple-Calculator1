@@ -15,7 +15,7 @@
 }
 
 .Calculator {
-    background: #3a4452;
+    background: #8d518a;
     padding: 20px;
     border-radius: 10px;
     /* to enable rounded corners */
@@ -54,6 +54,6 @@ form input.Equal {
 }
 
 form input.Operator {
-    color: #3358ff;
+    color: #7be21a;
 
 }
