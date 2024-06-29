@@ -57,3 +57,8 @@ form input.Operator {
     color: #7be21a;
 
 }
+form .label {
+    font-size: 10px;
+    color: aqua;
+    font-style: italic;
+}
