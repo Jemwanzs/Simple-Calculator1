@@ -7,7 +7,7 @@
 
 .Container {
     width: 100%;
-    height: 100vh;
+    max-height: 100vh; /* Adjust as necessary */
     background: #fffde3;
     display: flex;
     align-items: center;
@@ -16,44 +16,65 @@
 
 .Calculator {
     background: #3a4452;
-    padding: 20px;
+    padding: 10px; /* Adjust padding for smaller screens */
     border-radius: 10px;
-    /* to enable rounded corners */
 }
 
-/* Now let us design the calculator buttons */
 .Calculator form input {
     border: 0;
     outline: 0;
-    width: 60px;
+    width: 15%; /* Adjust button width as a percentage */
     height: 60px;
     border-radius: 10px;
     box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
     background: transparent;
-    font-size: 20px;
+    font-size: 4vw; /* Adjust font size relative to viewport width */
     color: #fff;
     cursor: pointer;
-    margin: 10px;
+    margin: 5px; /* Adjust margin for smaller screens */
 }
 
 form .Display {
     display: flex;
     justify-content: flex-end;
-    margin: 20px 0;
+    margin: 10px 0; /* Adjust margin for smaller screens */
 }
 
 form .Display input {
     text-align: right;
     flex: 1;
-    font-size: 45px;
-    box-shadow: none;
+    font-size: 8vw; /* Adjust font size relative to viewport width */
 }
 
 form input.Equal {
-    width: 145px;
+    width: 30%; /* Adjust width as a percentage */
 }
 
 form input.Operator {
     color: #3358ff;
+}
 
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .Calculator {
+        padding: 5px;
+    }
+
+    .Calculator form input {
+        width: 25%;
+        font-size: 5vw;
+        margin: 3px;
+    }
+
+    form .Display {
+        margin: 5px 0;
+    }
+
+    form .Display input {
+        font-size: 6vw;
+    }
+
+    form input.Equal {
+        width: 40%;
+    }
 }
