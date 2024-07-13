@@ -28,15 +28,14 @@
 }
 
 .Calculator form .Buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .Calculator form input {
     border: 0;
     outline: 0;
-    width: calc(25% - 10px);
     height: 60px;
     border-radius: 10px;
     box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
@@ -44,7 +43,6 @@
     font-size: 20px;
     color: #fff;
     cursor: pointer;
-    margin: 5px;
 }
 
 form .Display {
@@ -61,7 +59,7 @@ form .Display input {
 }
 
 form input.Equal {
-    width: calc(50% - 10px);
+    grid-column: span 2;
 }
 
 form input.Operator {
@@ -76,16 +74,11 @@ form .label {
 
 @media (max-width: 600px) {
     .Calculator form input {
-        width: calc(50% - 10px);
         height: 50px;
         font-size: 18px;
     }
 
     form .Display input {
         font-size: 30px;
-    }
-
-    form input.Equal {
-        width: calc(100% - 10px);
     }
 }
