@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator by James Sammy</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
     <div class="Container">
         <div class="Calculator">
-            <!-- Add input items in the form -->
             <form>
                 <div>
-                    <label class="label">
+                    <label class="label1">
                         Simple Calculator
                     </label>
                 </div>
@@ -24,38 +24,36 @@
                     </label>
                 </div>
                 <div class="Display">
-                    <input type="text" name="display" id="display"> <!-- display button -->
+                    <input type="text" name="display" id="display">
                 </div>
                 <div class="Buttons">
-                    <input type="button" value="AC" onclick="display.value= ''" class="Operator"> <!-- All Clear -->
-                    <input type="button" value="DE" onclick="display.value =  display.value.toString().slice(0,-1)" class="Operator">
-                    <!-- Delete -->
-                    <input type="button" value="." onclick="display.value+= '.'" class="Operator">
-                    <input type="button" value="/" onclick="display.value+= '/'" class="Operator">
+                    <input type="button" value="AC" class="Operator">
+                    <input type="button" value="DE" class="Operator">
+                    <input type="button" value="." class="Operator">
+                    <input type="button" value="/" class="Operator">
                 </div>
                 <div class="Buttons">
-                    <input type="button" value="7" onclick="display.value+= '7'">
-                    <input type="button" value="8" onclick="display.value+= '8'">
-                    <input type="button" value="9" onclick="display.value+= '9'">
-                    <input type="button" value="*" onclick="display.value+= '*'" class="Operator">
+                    <input type="button" value="7">
+                    <input type="button" value="8">
+                    <input type="button" value="9">
+                    <input type="button" value="*" class="Operator">
                 </div>
                 <div class="Buttons">
-                    <input type="button" value="4" onclick="display.value+= '4'">
-                    <input type="button" value="5" onclick="display.value+= '5'">
-                    <input type="button" value="6" onclick="display.value+= '6'">
-                    <input type="button" value="-" onclick="display.value+= '-'" class="Operator">
+                    <input type="button" value="4">
+                    <input type="button" value="5">
+                    <input type="button" value="6">
+                    <input type="button" value="-" class="Operator">
                 </div>
                 <div class="Buttons">
-                    <input type="button" value="1" onclick="display.value+= '1'">
-                    <input type="button" value="2" onclick="display.value+= '2'">
-                    <input type="button" value="3" onclick="display.value+= '3'">
-                    <input type="button" value="+" onclick="display.value+= '+'" class="Operator">
+                    <input type="button" value="1">
+                    <input type="button" value="2">
+                    <input type="button" value="3">
+                    <input type="button" value="+" class="Operator">
                 </div>
                 <div class="Buttons">
-                    <input type="button" value="00" onclick="display.value+= '00'">
-                    <input type="button" value="0" onclick="display.value+= '0'">
-                    <!-- Adjust '=' button size then add the css for that -->
-                    <input type="button" value="=" onclick="display.value = eval(display.value)" class="Equal Operator">
+                    <input type="button" value="00">
+                    <input type="button" value="0">
+                    <input type="button" value="=" class="Equal Operator">
                 </div>
             </form>
         </div>
