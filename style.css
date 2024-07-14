@@ -66,6 +66,12 @@ form input.Operator {
     color: #7be21a;
 }
 
+form .label1 {
+    font-size: 15px;
+    color: aqua;
+    font-style: italic;
+}
+
 form .label {
     font-size: 10px;
     color: aqua;
