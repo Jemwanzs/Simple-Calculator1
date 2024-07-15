@@ -1,6 +1,9 @@
-// Function to format number with commas
+// Function to format number with commas and limit to 2 decimal places
 function formatNumberWithCommas(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (typeof number === 'number' && !isNaN(number)) {
+        return number.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    }
+    return number;
 }
 
 // Function to handle input changes
@@ -12,7 +15,7 @@ function handleInputChange() {
 
     for (let i = 0; i < parts.length; i++) {
         if (!isNaN(parts[i]) && parts[i].trim() !== '') {
-            parts[i] = formatNumberWithCommas(parts[i]);
+            parts[i] = formatNumberWithCommas(parseFloat(parts[i]));
         }
     }
 
@@ -22,8 +25,6 @@ function handleInputChange() {
 // Attach event listeners to input and buttons
 window.onload = function () {
     const display = document.getElementById('display');
-
-    display.addEventListener('input', handleInputChange);
 
     const buttons = document.querySelectorAll('.Buttons input');
     buttons.forEach(button => {
@@ -36,19 +37,15 @@ window.onload = function () {
                 } catch (e) {
                     display.value = 'Error';
                 }
-            } else if (this.value !== 'AC' && this.value !== 'DE') {
+            } else if (this.value === 'AC') {
+                display.value = '';
+            } else if (this.value === 'DE') {
+                display.value = display.value.slice(0, -1);
+                handleInputChange();
+            } else {
                 display.value += this.value;
                 handleInputChange();
             }
         });
-    });
-
-    document.querySelector('input[value="AC"]').addEventListener('click', function () {
-        display.value = '';
-    });
-
-    document.querySelector('input[value="DE"]').addEventListener('click', function () {
-        display.value = display.value.slice(0, -1);
-        handleInputChange();
     });
 };
