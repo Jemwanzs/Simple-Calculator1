@@ -49,6 +49,7 @@ form .Display {
     display: flex;
     justify-content: flex-end;
     margin: 20px 0;
+    overflow-x: auto;
 }
 
 form .Display input {
@@ -56,6 +57,8 @@ form .Display input {
     flex: 1;
     font-size: 45px;
     box-shadow: none;
+    white-space: nowrap;
+    /* Ensure the text does not wrap */
 }
 
 form input.Equal {
